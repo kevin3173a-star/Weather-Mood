@@ -120,7 +120,7 @@ let weatherBarFun=function(){
 
         // localstorage에 현재기온,하늘상태 찍어주기
         localStorage.setItem('tempSky',JSON.stringify({temp,skyText}))
-    
+        
         // 요소가 존재하면 업데이트
         const currentTempEl = document.getElementById("currentTemp");
         if (currentTempEl) currentTempEl.innerText = `현재 ${temp}°`;
@@ -142,7 +142,21 @@ let weatherBarFun=function(){
     
         const updateEl = document.getElementById("updateTime");
         if (updateEl) updateEl.innerText = `업데이트: ${new Date().toLocaleTimeString()}`;
+
         
+        // 로딩 제거
+        const loading = document.querySelector('.loadingCircle');
+        const content = document.querySelector('.currentWeather');
+
+        if(loading){
+          loading.classList.remove('active');
+          content.classList.remove('hide');
+        }
+
+        //mood 야외활동 로딩 제거
+        const loadingM2 = document.querySelector('.loadingCircleM2')
+        loadingM2.classList.remove('active');
+
         dataJson();
 
       } catch (err) {
@@ -183,7 +197,7 @@ let weatherBarFun=function(){
 let pathname = location.pathname;
 
 
-if(!( location.href.match("weather") || location.href.match("set"))){
+if(!( pathname.match("weather") || pathname.match("set"))){
     weatherBarFun();
           
   }; 

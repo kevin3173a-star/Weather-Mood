@@ -199,6 +199,15 @@ h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 0;
+}
+
+.moon-box>b {
+    font-size: 30px;
+}
+.moon-name small {
+    font-size: 17px;
+    font-weight: normal;
 }
 
 .moon-svg {
@@ -211,12 +220,9 @@ h3 {
     height: 100%;
 }
 
-.moon-name {
-    padding-top: 30px;
-}
 
 .phase-text {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
 }
 

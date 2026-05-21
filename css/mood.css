@@ -6,6 +6,33 @@
 
 
 /* --------- 음악 추천 (Lp) ---------- */
+/* 로딩화면 */
+.swiper {
+  position: relative;
+}
+.loadingCircleM1{
+  width: 30px;
+  height: 30px;
+  border: 2px solid #bdbdbd;
+  border-top: 3px solid #333333;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+  display:none;
+}
+.loadingCircleM1.active{
+  display:block;
+}
+@keyframes spin{
+  to{
+    transform: translate(-50%,-50%) rotate(360deg);
+  }
+}
 
 .playlist{margin-top:30px;}
 
@@ -40,6 +67,40 @@
 /* --------------- 야외활동 ------------------- */
 
 .activity{margin-top: 35px;}
+
+/* 로딩화면 */
+.activityContainer{
+  position: relative;
+}
+.loadingCircleM2{
+  width: 30px;
+  height: 30px;
+  border: 2px solid #bdbdbd;
+  border-top: 3px solid #333333;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+  display:none;
+}
+.loadingCircleM2.active{
+  display:block;
+}
+
+@keyframes spin{
+  to{
+    transform: translate(-50%,-50%) rotate(360deg);
+  }
+}
+
+.activityContainer{
+    height: 174px; 
+    width: 360px;
+}
 .activity-01{
     display: flex; 
     align-items: end;

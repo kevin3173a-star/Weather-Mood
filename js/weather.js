@@ -105,15 +105,28 @@ async function dataFun() {
         const baseTime = getShortBaseTime();
         const tmFc = getMidTmFc();
 
+        /* 단기, 중기 동시에 다운로드해서 전부끝나면 동시에 출력하게 */
+        const shortUrl=(`https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?` +
+            `serviceKey=${serviceKey}&numOfRows=1000&pageNo=1&dataType=JSON` +
+            `&base_date=${dateArr[0].txt}&base_time=${baseTime}&nx=61&ny=131`)
+
+        const midLandUrl=(`https://apis.data.go.kr/1360000/MidFcstInfoService/getMidLandFcst?` +
+            `serviceKey=${serviceKey}&numOfRows=10&pageNo=1&dataType=JSON` +
+            `&regId=11B00000&tmFc=${tmFc}`)
+
+        const midTaUrl=(`https://apis.data.go.kr/1360000/MidFcstInfoService/getMidTa?` +
+            `serviceKey=${serviceKey}&numOfRows=10&pageNo=1&dataType=JSON` +
+            `&regId=11B10101&tmFc=${tmFc}`)
+            
+        const [shortRes, midLandRes, midTaRes] = await Promise.all([
+            fetch(shortUrl),
+            fetch(midLandUrl),
+            fetch(midTaUrl)
+        ]);  
+
         // ===============================
         // 🔹 단기 API
         // ===============================
-        const shortRes = await fetch(
-            `https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?` +
-            `serviceKey=${serviceKey}&numOfRows=1000&pageNo=1&dataType=JSON` +
-            `&base_date=${dateArr[0].txt}&base_time=${baseTime}&nx=61&ny=131`
-        );
-
         const shortData = await shortRes.json();
         const items = shortData.response.body.items.item;
 
@@ -155,7 +168,7 @@ async function dataFun() {
             const displayHour = hour % 12 === 0 ? 12 : hour % 12;
 
             swiperWrapper.innerHTML += `
-                <div class="swiper-slide">
+                <div class="swiper-slide hide">
                     <span class="material-symbols-outlined">
                         ${getWeatherIcon({sky:val.SKY, pty:val.PTY})}
                     </span>
@@ -216,18 +229,7 @@ async function dataFun() {
         // ===============================
         // 🔹 중기 5~7일 (요일 표시)
         // ===============================
-        const midLandRes = await fetch(
-            `https://apis.data.go.kr/1360000/MidFcstInfoService/getMidLandFcst?` +
-            `serviceKey=${serviceKey}&numOfRows=10&pageNo=1&dataType=JSON` +
-            `&regId=11B00000&tmFc=${tmFc}`
-        );
         const landItem = (await midLandRes.json()).response.body.items.item[0];
-
-        const midTaRes = await fetch(
-            `https://apis.data.go.kr/1360000/MidFcstInfoService/getMidTa?` +
-            `serviceKey=${serviceKey}&numOfRows=10&pageNo=1&dataType=JSON` +
-            `&regId=11B10101&tmFc=${tmFc}`
-        );
         const taItem = (await midTaRes.json()).response.body.items.item[0];
 
         for (let i = 4; i <= 6; i++) {
@@ -254,6 +256,12 @@ async function dataFun() {
             icons[0].textContent = getWeatherIcon({text:am});
             icons[1].textContent = getWeatherIcon({text:pm});
         }
+        // 로딩 제거
+        const loading = document.querySelector('.loadingCircleW2');
+        const content = document.querySelector('.weather-weekCont');
+
+        loading.classList.remove('active');
+        content.classList.remove('hide');
 
     } catch(e){
         console.error("날씨 오류:", e);

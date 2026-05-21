@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="./css/mood.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-    <script defer src="./js/common.js"></script>
     <script defer src="./js/mood.js"></script>
+    <script defer src="./js/common.js"></script>
 </head>
 
 
@@ -88,7 +88,8 @@
                 <div class="playlist">
                     <h3>음악 추천</h3>
                     <div class="swiper mySwiper2">
-                        <ul class="swiper-wrapper">
+                        <div class="loadingCircleM1 active"></div>
+                        <ul class="swiper-wrapper hide">
                             <!-- <li class="list swiper-slide"
                                 style="background: url(./image/mood/calm-1.png) 0 0 / cover no-repeat fixed;">                        
                             <img class="lp" src="./image/mood/LP_bg 1.png" alt="">
@@ -100,15 +101,18 @@
                 <!-- 야외활동 -->
                 <div class="activity">
                     <h3>야외활동 추천</h3>
-                    <ul class="activity-card">
-                        <!-- <li class="activity-01">
-                            <p>☕</p>
-                            <div class="activity-text">
-                                <p><span>카페투어</span>예쁜 인테리어, 테라스, 디저트 맛집</p>
-                                <p class="desc">야외 풍경을 보며 여유를 즐기기 딱 좋은 날씨에요!</p>
-                            </div>
-                        </li> -->
-                    </ul>
+                    <div class="activityContainer">
+                        <div class="loadingCircleM2 active"></div>
+                        <ul class="activity-card hide">
+                            <!-- <li class="activity-01">
+                                <p>☕</p>
+                                <div class="activity-text">
+                                    <p><span>카페투어</span>예쁜 인테리어, 테라스, 디저트 맛집</p>
+                                    <p class="desc">야외 풍경을 보며 여유를 즐기기 딱 좋은 날씨에요!</p>
+                                </div>
+                            </li> -->
+                        </ul>
+                    </div>
                 </div>
 
         

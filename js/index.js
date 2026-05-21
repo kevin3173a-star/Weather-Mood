@@ -1,33 +1,68 @@
 if(!sessionStorage.ani){
-    aa();
+  
+  sessionStorage.ani = 1;
+}
+
+// 10분 이내면 기존 날씨 api 데이터 사용
+const now = Date.now();
+const savedTime = localStorage.getItem('apiTime');
+console.clear();
+
+if(savedTime && now - savedTime < 1000 * 60 * 10){
+  console.log('기존 날씨데이터 사용중(10분마다 갱신)');
+  console.log(
+        '마지막 업데이트된 시간',
+        new Date(Number(savedTime)).toLocaleString()
+      );
+}else{
+  aa();
+  console.log(
+        '업데이트가 되었습니다',
+        new Date(now).toLocaleString()
+      );
 }
 
 async function aa(){
-  const serviceKey = "0123891d17b0e073ff763a40afc5aed555b9b50358d33ebf729a71244c77c4e0";  // 일반키 그대로
+  try{
+    const serviceKey = "0123891d17b0e073ff763a40afc5aed555b9b50358d33ebf729a71244c77c4e0";  // 일반키 그대로
+  
+    const stationName = "의정부동";
+  
+     const url =
+          `https://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty?` +
+          `serviceKey=${encodeURIComponent(serviceKey)}` +
+          `&returnType=json&numOfRows=1&pageNo=1` +
+          `&stationName=${encodeURIComponent(stationName)}` +
+          `&dataTerm=DAILY&ver=1.3`;
+  
+      const res = await fetch(url);
+      if(!res.ok){
+        throw new Error(res.status);
+      }
 
-  const stationName = "의정부동";
+      const data = await res.json();
 
-   const url =
-        `https://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty?` +
-        `serviceKey=${encodeURIComponent(serviceKey)}` +
-        `&returnType=json&numOfRows=1&pageNo=1` +
-        `&stationName=${encodeURIComponent(stationName)}` +
-        `&dataTerm=DAILY&ver=1.3`;
+      const item = data.response?.body?.items?.[0];
+      if(!item){
+        console.log('미세먼지 데이터 없음');
+        return;
+      }
 
-    const res = await fetch(url);
-    const data = await res.json();
-    const item = data.response?.body?.items?.[0];
+      const gradeMap = {
+              1: { text: "좋음"},
+              2: { text: "보통"},
+              3: { text: "나쁨"},
+              4: { text: "매우나쁨"}
+          };
 
-    const gradeMap = {
-            1: { text: "좋음"},
-            2: { text: "보통"},
-            3: { text: "나쁨"},
-            4: { text: "매우나쁨"}
-        };
+      localStorage.dust = JSON.stringify(item);
 
-    console.log('sdsf')
-
-    localStorage.dust = JSON.stringify(item);
+      // 저장 시간 기록
+      localStorage.setItem('apiTime', now);
+  }
+  catch(err){
+    console.log('미세먼지 api 오류', err);
+  }
 }
 
 // ================맨처음 성별선택 온보딩 & 기록있으면 바로 메인===================
@@ -147,12 +182,20 @@ async function aa(){
 
   
       let tempSky=JSON.parse(localStorage.getItem('tempSky'))/* 현재기온 가져오기 */
+      if(!tempSky || tempSky.temp == null){
+        console.log('tempSky 데이터 없음');
+        return;
+      }
       let genderCheck = localStorage.getItem('gender')
       
       console.log(data)
       let resultCodi=data.캐릭터옷.find(function(ss){
         return tempSky.temp >= ss.min && tempSky.temp <=ss.max;
       })
+      if(!resultCodi){
+        console.log('캐릭터 데이터 없음');
+        return;
+      }
       
       console.log(resultCodi)
 
@@ -164,7 +207,13 @@ async function aa(){
       
       
 
-      let dustText=JSON.parse(localStorage.getItem('dust')) || {};
+      let dustText = {};
+
+      try{
+        dustText = JSON.parse(localStorage.getItem('dust')) || {};
+      }catch(err){
+        console.log('dust parse 오류', err);
+      }
 
         if(tempSky.skyText == "비" || 
            tempSky.skyText == "비/눈" ||

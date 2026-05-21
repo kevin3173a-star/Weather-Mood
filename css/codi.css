@@ -39,6 +39,33 @@
 
 
 /* -------------- 코디 사진 -----------------  */
+/* 로딩화면 */
+.codi{
+    position: relative;
+}
+.loadingCircleC1{
+  width: 30px;
+  height: 30px;
+  border: 2px solid #bdbdbd;
+  border-top: 3px solid #333333;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+  display:none;
+}
+.loadingCircleC1.active{
+  display:block;
+}
+@keyframes spin{
+  to{
+    transform: translate(-50%,-50%) rotate(360deg);
+  }
+}
 .codi {
     display: flex;
     flex-wrap: wrap;

@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link rel="stylesheet" href="./css/index.css">
-        <link rel="stylesheet" as="style" crossorigin href="https://jsdelivr.net" />
+        <!-- <link rel="stylesheet" as="style" crossorigin href="https://jsdelivr.net" /> -->
     <script defer src="./js/index.js"></script>
     <script defer src="./js/common.js"></script>
 </head>
@@ -60,9 +60,12 @@
             <!-- =============================메인 현재날씨===================== -->
             <section class="mainHeader">
               <div class="mainCurrentWeather">
-                <h3 id="currentTempIndex"></h3>
-                <p><b id="weatherState"></b> | <b id="minMaxTempIndex"></b></p>
-                <p></p>
+                <div class="loadingCircle active"></div>
+                <div class="currentWeather hide">
+                    <h3 id="currentTempIndex"></h3>
+                    <p><b id="weatherState"></b> | <b id="minMaxTempIndex"></b></p>
+                    <p></p>
+                </div>
               </div>
               <div class="mainSetting">
                 <span class="material-symbols-outlined">

@@ -6,6 +6,39 @@
 
 
 /* ========================메인 현재날씨========================== */
+/* 로딩화면 */
+.mainCurrentWeather{
+  position: relative;
+}
+.loadingCircle{
+  width: 30px;
+  height: 30px;
+  border: 2px solid #bdbdbd;
+  border-top: 3px solid #333333;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+  display:none;
+}
+
+.loadingCircle.active{
+  display:block;
+}
+.currentWeather.hide{
+   opacity:0; 
+}
+@keyframes spin{
+  to{
+    transform: translate(-50%,-50%) rotate(360deg);
+  }
+}
+
+
 .main {
     background: linear-gradient(to bottom, #CFFFF1 0%, #00CE93 77%, #12A77C 100%);
     height: 100%;
@@ -19,18 +52,18 @@
     padding-top: 76px;
 }
 
-.mainCurrentWeather h3 {
+.mainCurrentWeather .currentWeather h3 {
     font-size: 60px;
 }
 
-.mainCurrentWeather p:nth-of-type(1) {
+.mainCurrentWeather .currentWeather p:nth-of-type(1) {
     font-size: 20px;
     margin-top: 3px;
     margin-bottom: 5px;
 
 }
 
-.mainCurrentWeather p:nth-of-type(2) {
+.mainCurrentWeather .currentWeather p:nth-of-type(2) {
     font-size: 18px;
     font-weight: 300;
 }
