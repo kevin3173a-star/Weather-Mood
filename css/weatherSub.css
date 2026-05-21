@@ -5,13 +5,13 @@
     background: linear-gradient(to bottom, #CFFFF1 0%, #00CE93 77%, #12A77C 100%);
 }
 
-.txt > span{
+.txt>span {
     padding: 0 21px;
 }
 
-.txt a{
+.txt a {
     padding: 0 21px;
-}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+}
 
 
 /* ======================= 일출/일몰 카드 ======================= */
@@ -49,7 +49,7 @@
     stroke-linecap: round;
     stroke-dasharray: 0 100;
     /* animation: progressbar 5s linear; */
-    
+
 }
 
 .sun {
@@ -62,8 +62,8 @@
     background-color: yellow;
     filter: drop-shadow(0 0 5px yellow);
     transform: rotate(50deg) translateX(80px);
-    
-    
+
+
     /* animation: sun 5s linear forwards; */
 }
 
@@ -137,13 +137,28 @@ h3 {
     margin: 0px auto;
 }
 
-.material-symbols-outlined {transition: 0.3s;} /* 0.3초 동안 자연스럽게 변함 */
+.material-symbols-outlined {
+    transition: 0.3s;
+}
 
-/* 등급 색상 */ 
-.grade-1 { color:#2196F3; }
-.grade-2 { color:#4CAF50; }
-.grade-3 { color:#FF9800;}
-.grade-4 { color:#F44336; }
+/* 0.3초 동안 자연스럽게 변함 */
+
+/* 등급 색상 */
+.grade-1 {
+    color: #2196F3;
+}
+
+.grade-2 {
+    color: #4CAF50;
+}
+
+.grade-3 {
+    color: #FF9800;
+}
+
+.grade-4 {
+    color: #F44336;
+}
 
 .contents {
     margin: 0 auto;
@@ -183,7 +198,8 @@ h3 {
 
 #rain small {
     font-size: 17px;
-    font-weight: normal; /* 기본 bold 상속 막기 */
+    font-weight: normal;
+    /* 기본 bold 상속 막기 */
 }
 
 .sub .contents .box1 .box2>span {
@@ -205,6 +221,7 @@ h3 {
 .moon-box>b {
     font-size: 30px;
 }
+
 .moon-name small {
     font-size: 17px;
     font-weight: normal;
@@ -227,47 +244,42 @@ h3 {
 }
 
 moon-phase {
-  --moon-phase-blur: 3px;
+    --moon-phase-blur: 3px;
 
-  --_w: calc(100% - 1% * attr(illumination type(<number>), 0));
-  aspect-ratio: 1;
-  border-radius: 50%;
-  display: block;
-  overflow: hidden;
-  position: relative;
+    --_w: calc(100% - 1% * attr(illumination type(<number>), 0));
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: block;
+    overflow: hidden;
+    position: relative;
 }
 
 moon-phase::before {
-  background: url('https://assets.stoumann.dk/img/moon.png') center / cover no-repeat;  
-  content: '';
-  inset: 0;
-  position: absolute;
+    background: url('https://assets.stoumann.dk/img/moon.png') center / cover no-repeat;
+    content: '';
+    inset: 0;
+    position: absolute;
 }
 
 moon-phase::after {
-  background-color: #000;
-  border-radius: 50%;
-  content: '';
-  height: 100%;
-  inset: 0;
-  position: absolute;
-  width: var(--_w);
-  opacity: .85;
+    background-color: #000;
+    border-radius: 50%;
+    content: '';
+    height: 100%;
+    inset: 0;
+    position: absolute;
+    width: var(--_w);
+    opacity: .85;
 }
 
 /* 방향 처리 */
 [phase*="waxing"]::after,
 [phase*="first quarter"]::after {
-  left: auto;
-  right: 0;
+    left: auto;
+    right: 0;
 }
 
 [phase*="waning"]::after,
 [phase*="last quarter"]::after {
-  left: 0;
+    left: 0;
 }
-
-
-
-
-

@@ -1,6 +1,6 @@
 @import url('./common/common.css');
 
-.app2{
+.app2 {
     padding: 0 21px;
 }
 
@@ -10,7 +10,7 @@
     display: flex;
     margin-top: 13px;
     margin-bottom: 10px;
-    gap:10px;
+    gap: 10px;
 
 }
 
@@ -24,14 +24,15 @@
     text-align: center;
     justify-content: center;
     padding: 5px;
-    
+
     cursor: pointer;
     transition: 0.3s;
 }
 
 .btn p.active {
     background-color: rgb(143, 235, 208);
-    border: 1px solid #00CE93;;
+    border: 1px solid #00CE93;
+    ;
 }
 
 
@@ -40,32 +41,36 @@
 
 /* -------------- 코디 사진 -----------------  */
 /* 로딩화면 */
-.codi{
+.codi {
     position: relative;
 }
-.loadingCircleC1{
-  width: 30px;
-  height: 30px;
-  border: 2px solid #bdbdbd;
-  border-top: 3px solid #333333;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%,-50%);
 
-  display:none;
+.loadingCircleC1 {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #bdbdbd;
+    border-top: 3px solid #333333;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: none;
 }
-.loadingCircleC1.active{
-  display:block;
+
+.loadingCircleC1.active {
+    display: block;
 }
-@keyframes spin{
-  to{
-    transform: translate(-50%,-50%) rotate(360deg);
-  }
+
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
+
 .codi {
     display: flex;
     flex-wrap: wrap;
@@ -73,10 +78,10 @@
     overflow-y: auto;
     height: 510px;
     scrollbar-width: none;
-    padding: 0 1px;  
+    padding: 0 1px;
 }
 
-.codi img { 
+.codi img {
     width: 174px;
     height: 228px;
     object-fit: cover;
@@ -95,53 +100,60 @@ aside {
     height: 580px;
     background-color: #ffffff;
     border-radius: 20px;
-    justify-content: center;    
-      
+    justify-content: center;
+
     /* display: none;   */
-    position: absolute;              
+    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0;
     visibility: hidden;
     transition: 0.3s;
-     z-index: 20000;
-    
+    z-index: 20000;
+
 }
-aside > img{
-    width: 320px; height: 410px;
+
+aside>img {
+    width: 320px;
+    height: 410px;
     margin-left: 20px;
-    margin-top: 15px;    
+    margin-top: 15px;
     object-fit: cover;
-    
+
 }
-aside p{
+
+aside p {
     margin: 5px;
     font-size: 12px;
     margin-left: 20px;
 }
- aside .title span img{
-    width: 20px; height: 20px;
+
+aside .title span img {
+    width: 20px;
+    height: 20px;
 }
-aside.active{
+
+aside.active {
     opacity: 1;
     visibility: visible;
     transform: translate(-50%, -50%) scale(1);
 }
 
-.title{
+.title {
     display: flex;
     align-items: center;
     margin-top: 7px;
 }
-.title p:nth-of-type(1){
+
+.title p:nth-of-type(1) {
     margin: 10px;
     font-size: 14px;
 }
 
 
 
-.btn-area{
+.btn-area {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -151,80 +163,86 @@ aside.active{
 }
 
 .btn-area a {
-    background:  rgb(143, 235, 208);
+    background: rgb(143, 235, 208);
     color: black;
     padding: 10px 15px;
     text-decoration: none;
     font-size: 12px;
-    width: 120px; height: 33px;
+    width: 120px;
+    height: 33px;
     border-radius: 20px;
     text-align: center;
 }
-.btn-area a img{
-    width:15px; height:15px;
+
+.btn-area a img {
+    width: 15px;
+    height: 15px;
     margin: 0;
 }
-.btn-area button{
+
+.btn-area button {
     border: 1px solid rgb(143, 235, 208);
     background-color: white;
     color: black;
-    width: 120px; height: 33px;
+    width: 120px;
+    height: 33px;
     border-radius: 20px;
     font-size: 12px;
     cursor: pointer;
 }
 
 /* 오버레이 */
-.overlay{
+.overlay {
     width: 100%;
-    height: 100%; 
-    left: 0; top: 0;
-    position: absolute;  
-    background: rgba(0,0,0,0.6);
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
     opacity: 0;
     visibility: hidden;
     transition: 0.3s;
-    margin: 0;   
+    margin: 0;
     z-index: 110;
-    
+
 }
 
 .overlay.active,
-.modal.active{
-  opacity: 1;
-  visibility: visible;
+.modal.active {
+    opacity: 1;
+    visibility: visible;
 }
 
-.modal.active{
-  transform: translate(-50%, -50%) scale(1);
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
 }
+
 .modal span {
     margin-left: 21px;
-  
+
 }
 
 
 /* 별 */
-.modal .star-btn{
-  width: 20px;
-  height: 25px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #bbb;
-  padding: 0;
-  
+.modal .star-btn {
+    width: 20px;
+    height: 25px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #bbb;
+    padding: 0;
+
 }
+
 .modal .star-btn img {
-  
-  object-fit: contain;
+
+    object-fit: contain;
 }
 
-.modal .star-btn.active{
-  color: rgb(143, 235, 208);
-  padding: 0; margin: 0;
- 
+.modal .star-btn.active {
+    color: rgb(143, 235, 208);
+    padding: 0;
+    margin: 0;
+
 }
-
-
-

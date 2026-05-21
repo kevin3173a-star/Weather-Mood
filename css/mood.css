@@ -1,54 +1,75 @@
 @import url('./common/common.css');
 
-.mood{padding:0 21px;}
-.mood h3{margin-bottom: 21px; font-size: 15px; font-weight: 500;}
+.mood {
+    padding: 0 21px;
+}
+
+.mood h3 {
+    margin-bottom: 21px;
+    font-size: 15px;
+    font-weight: 500;
+}
 
 
 
 /* --------- 음악 추천 (Lp) ---------- */
 /* 로딩화면 */
 .swiper {
-  position: relative;
-}
-.loadingCircleM1{
-  width: 30px;
-  height: 30px;
-  border: 2px solid #bdbdbd;
-  border-top: 3px solid #333333;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-
-  display:none;
-}
-.loadingCircleM1.active{
-  display:block;
-}
-@keyframes spin{
-  to{
-    transform: translate(-50%,-50%) rotate(360deg);
-  }
+    position: relative;
 }
 
-.playlist{margin-top:30px;}
+.loadingCircleM1 {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #bdbdbd;
+    border-top: 3px solid #333333;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
 
-.swiper{
-    height: 180px; width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: none;
+}
+
+.loadingCircleM1.active {
+    display: block;
+}
+
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.playlist {
+    margin-top: 30px;
+}
+
+.swiper {
+    height: 180px;
+    width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.list{
-    width: 138px; height: 100%; gap: 15px;
+.list {
+    width: 138px;
+    height: 100%;
+    gap: 15px;
     position: relative;
 }
 
-.lp{position: absolute; width: 100%; left: 0; bottom: 0;}
-.lp-txt{
+.lp {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+.lp-txt {
     width: 100%;
     height: 50px;
     background-color: rgba(0, 0, 0, 0.6);
@@ -66,61 +87,79 @@
 
 /* --------------- 야외활동 ------------------- */
 
-.activity{margin-top: 35px;}
+.activity {
+    margin-top: 35px;
+}
 
 /* 로딩화면 */
-.activityContainer{
-  position: relative;
-}
-.loadingCircleM2{
-  width: 30px;
-  height: 30px;
-  border: 2px solid #bdbdbd;
-  border-top: 3px solid #333333;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-
-  display:none;
-}
-.loadingCircleM2.active{
-  display:block;
+.activityContainer {
+    position: relative;
 }
 
-@keyframes spin{
-  to{
-    transform: translate(-50%,-50%) rotate(360deg);
-  }
+.loadingCircleM2 {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #bdbdbd;
+    border-top: 3px solid #333333;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: none;
 }
 
-.activityContainer{
-    height: 174px; 
+.loadingCircleM2.active {
+    display: block;
+}
+
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.activityContainer {
+    height: 174px;
     width: 360px;
 }
-.activity-01{
-    display: flex; 
+
+.activity-01 {
+    display: flex;
     align-items: end;
     margin-bottom: 10px;
 }
-.activity-01 > p{
+
+.activity-01>p {
     width: 40px;
     font-size: 27px;
-    text-align: center; 
+    text-align: center;
 }
 
-.activity-text > p > span{font-size: 15px; font-weight: 600; margin-right: 10px;}
-.activity-text{font-size: 12px; color: black; margin-left: 10px;}
-.desc{color: #00ce93;}
+.activity-text>p>span {
+    font-size: 15px;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.activity-text {
+    font-size: 12px;
+    color: black;
+    margin-left: 10px;
+}
+
+.desc {
+    color: #00ce93;
+}
 
 
 
 /* ------------ 플레이리스트 팝업창 -------------*/
 
-aside{
+aside {
     width: 360px;
     height: 580px;
     background-color: #ffffff;
@@ -139,16 +178,27 @@ aside{
     transition: 0.3s;
     z-index: 20000;
 }
-.modal-video{
-  width: 320px; height: 230px;
-  object-fit: cover; 
-  display: block;
-  margin: 20px 21px auto; 
+
+.modal-video {
+    width: 320px;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+    margin: 20px 21px auto;
 }
 
-aside .title span img{width: 20px; height: 20px;}
-aside .title p{font-size: 20px; font-weight: bold; margin-left: 3px;}
-aside .title{
+aside .title span img {
+    width: 20px;
+    height: 20px;
+}
+
+aside .title p {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 3px;
+}
+
+aside .title {
     display: flex;
     align-items: center;
     white-space: nowrap;
@@ -157,42 +207,49 @@ aside .title{
 }
 
 /* 버튼 */
-.btn-area{
-    display: flex; position: absolute;
-    bottom: 20px; gap: 6px;
+.btn-area {
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    gap: 6px;
     font-size: 12px;
     left: 50%;
     transform: translateX(-50%);
 }
-.btn-area a{
+
+.btn-area a {
     background: #8FEBD0;
     color: black;
     padding: 10px 15px;
     text-decoration: none;
     font-size: 12px;
-    width: 120px; height: 33px;
+    width: 120px;
+    height: 33px;
     border-radius: 20px;
     text-align: center;
 }
-.btn-area a img{
+
+.btn-area a img {
     width: 20px;
     height: 16px;
     margin: 0;
     margin-right: 3px;
 }
-.btn-area button{
+
+.btn-area button {
     border: 1px solid #8FEBD0;
     background-color: white;
     color: black;
-    width: 120px; height: 33px;
+    width: 120px;
+    height: 33px;
     border-radius: 20px;
     font-size: 12px;
     cursor: pointer;
 }
 
-.modal-list{
+.modal-list {
     height: 195px;
-    font-size: 12px; 
+    font-size: 12px;
     margin: 15px 21px;
     overflow: auto;
 
@@ -201,29 +258,46 @@ aside .title{
     scrollbar-color: transparent transparent;
     transition: scrollbar-color 0.3s;
 }
-.modal-list:hover{scrollbar-color: #8FEBD0 transparent;}
-.modal-list::-webkit-scrollbar-button{display: none; width: 0; height: 0;}
 
-.modal-list p{margin-bottom: 5px;}
+.modal-list:hover {
+    scrollbar-color: #8FEBD0 transparent;
+}
+
+.modal-list::-webkit-scrollbar-button {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+.modal-list p {
+    margin-bottom: 5px;
+}
 
 /* 오버레이 */
-.overlay{
+.overlay {
     width: 100%;
-    height: 100%; 
-    left: 0; top: 0;
-    position: absolute;  
-    background: rgba(0,0,0,0.6);
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
     opacity: 0;
     visibility: hidden;
     transition: 0.3s;
-    margin: 0;   
-    z-index: 110;   
+    margin: 0;
+    z-index: 110;
 }
 
 /* 액티브 */
 .overlay.active,
-.modal.active{opacity: 1;visibility: visible;}
-.modal.active{transform: translate(-50%, -50%) scale(1);}
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
 
 /* 별 */
 .modal .star-btn {
@@ -235,5 +309,13 @@ aside .title{
     color: #bbb;
     padding: 0;
 }
-.modal .star-btn img{object-fit: contain;}
-.modal .star-btn.active{color: #00ce93; padding: 0; margin: 0;}
+
+.modal .star-btn img {
+    object-fit: contain;
+}
+
+.modal .star-btn.active {
+    color: #00ce93;
+    padding: 0;
+    margin: 0;
+}

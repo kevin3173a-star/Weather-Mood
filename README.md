@@ -104,7 +104,6 @@ WEATHER-MOOD
 ├── css                 # 웹사이트 전체 스타일 파일
 │   ├── common          # 공통 스타일 (폰트, 리셋, 공통 UI)
 │   │   ├── common.css
-│   │   ├── font.css
 │   │   └── reset.css
 │   │
 │   ├── bg.css          # 배경 관련 스타일
@@ -136,7 +135,6 @@ WEATHER-MOOD
 │   └── weatherSub.js   # 상세 날씨 정보 기능
 │
 ├── bg.html             # 배경 설정 페이지
-├── branch.html         # 페이지 이동 관련 화면
 ├── codi.html           # 날씨 기반 코디 추천 페이지
 ├── codiScrap.html      # 코디 보관함 페이지
 ├── index.html          # 메인 페이지

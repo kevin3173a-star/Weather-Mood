@@ -1,8 +1,14 @@
 @import url('./common/common.css');
 @import url('./common/reset.css');
 
-.app{position:relative;}
-.setting{padding:0 21px;}
+.app {
+    position: relative;
+}
+
+.setting {
+    padding: 0 21px;
+}
+
 .set {
     margin-top: 50px;
     display: flex;
@@ -15,7 +21,7 @@
     margin-bottom: 10px;
     font-size: 15px;
     font-weight: 500;
-    
+
 }
 
 .set input {
@@ -32,45 +38,54 @@
     width: 175px;
 }
 
-.bgcSelect span{
+.bgcSelect span {
     width: 60px;
     height: 42px;
-    border:none;
+    border: none;
 }
 
-.bgcSelect label:nth-of-type(1) span{
+.bgcSelect label:nth-of-type(1) span {
     background-color: #E0E0E0;
 }
-.bgcSelect label:nth-of-type(1) input:checked+span{
-    background:linear-gradient(to bottom, #EBEBEB 0%, #999999 100%);
+
+.bgcSelect label:nth-of-type(1) input:checked+span {
+    background: linear-gradient(to bottom, #EBEBEB 0%, #999999 100%);
     border: 3px solid #00CE93;
 }
-.bgcSelect label:nth-of-type(2) span{
+
+.bgcSelect label:nth-of-type(2) span {
     background-color: #8FEBD0
 }
-.bgcSelect label:nth-of-type(2) input:checked+span{
-    background:linear-gradient(to bottom, #9effe2 0%, #00CE93 77%, #12A77C 100%);
+
+.bgcSelect label:nth-of-type(2) input:checked+span {
+    background: linear-gradient(to bottom, #9effe2 0%, #00CE93 77%, #12A77C 100%);
     border: 3px solid #00CE93;
 }
-.bgcSelect label:nth-of-type(3) span{
+
+.bgcSelect label:nth-of-type(3) span {
     background-color: #B0C9EF;
 }
-.bgcSelect label:nth-of-type(3) input:checked+span{
-    background:linear-gradient(to bottom, #cbe0ff 0%, #6ea3f3 77%, #458bf5 100%);
+
+.bgcSelect label:nth-of-type(3) input:checked+span {
+    background: linear-gradient(to bottom, #cbe0ff 0%, #6ea3f3 77%, #458bf5 100%);
     border: 3px solid #00CE93;
 }
-.bgcSelect label:nth-of-type(4) span{
+
+.bgcSelect label:nth-of-type(4) span {
     background-color: #cfc4ff;
 }
-.bgcSelect label:nth-of-type(4) input:checked+span{
-    background:linear-gradient(to bottom, #dbd3ff 0%, #a08bff 77%, #8164ff 100%);
+
+.bgcSelect label:nth-of-type(4) input:checked+span {
+    background: linear-gradient(to bottom, #dbd3ff 0%, #a08bff 77%, #8164ff 100%);
     border: 3px solid #00CE93;
 }
-.bgcSelect label:nth-of-type(5) span{
+
+.bgcSelect label:nth-of-type(5) span {
     background-color: #E8D08D;
 }
-.bgcSelect label:nth-of-type(5) input:checked+span{
-    background:linear-gradient(to bottom, #ffeab1 0%, #e4c267 77%, #dbad2c 100%);
+
+.bgcSelect label:nth-of-type(5) input:checked+span {
+    background: linear-gradient(to bottom, #ffeab1 0%, #e4c267 77%, #dbad2c 100%);
     border: 3px solid #00CE93;
 }
 
@@ -98,25 +113,25 @@
     display: flex;
     gap: 15px;
 }
-.bgcOption {}
 
 .setBtn button {
-    position:absolute;
+    position: absolute;
     background-color: #EEEEEE;
     padding: 15px 0;
     width: 359px;
     border-radius: 40px;
-    color:#BDBDBD;
+    color: #BDBDBD;
     border: none;
     font-size: 15px;
     font-weight: 500;
-    font-family: 'Pretendard', sans-serif;  
-    bottom:40px;
-    left:50%;
-    transform:translateX(-50%);    
+    font-family: 'Pretendard', sans-serif;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
 }
-.setBtn button.active{
-    position:absolute;
+
+.setBtn button.active {
+    position: absolute;
     background-color: #00CE93;
     padding: 15px 0;
     width: 359px;
@@ -125,9 +140,9 @@
     border: none;
     font-size: 15px;
     font-weight: 500;
-    font-family: 'Pretendard', sans-serif;  
-    bottom:40px;
-    left:50%;
-    transform:translateX(-50%);    
+    font-family: 'Pretendard', sans-serif;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
     cursor: pointer;
 }

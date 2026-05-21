@@ -9,7 +9,7 @@
     padding: 0 21px;
 }
 
-.txt a{
+.txt a {
     padding: 0 21px;
 }
 
@@ -59,32 +59,34 @@
 .swiper-wrapper {
     position: relative;
 }
-.loadingCircleW1{
-  width: 30px;
-  height: 30px;
-  border: 2px solid #bdbdbd;
-  border-top: 3px solid #333333;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
 
-  display:none;
+.loadingCircleW1 {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #bdbdbd;
+    border-top: 3px solid #333333;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: none;
 }
 
-.loadingCircleW1.active{
-  display:block;
+.loadingCircleW1.active {
+    display: block;
 }
+
 /* .swiper-slide.hide{
     opacity: 0;
 } */
-@keyframes spin{
-  to{
-    transform: translate(-50%,-50%) rotate(360deg);
-  }
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
 .weather-hour {
@@ -110,7 +112,8 @@
     align-items: center;
     cursor: grab;
 }
-.swiper-wrapper:active{
+
+.swiper-wrapper:active {
     cursor: grabbing;
 }
 
@@ -169,33 +172,36 @@
 .weather-week {
     position: relative;
 }
-.loadingCircleW2{
-  width: 30px;
-  height: 30px;
-  border: 2px solid #bdbdbd;
-  border-top: 3px solid #333333;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
 
-  display:none;
+.loadingCircleW2 {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #bdbdbd;
+    border-top: 3px solid #333333;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: none;
 }
 
-.loadingCircleW2.active{
-  display:block;
+.loadingCircleW2.active {
+    display: block;
 }
+
 /* .weather-weekCont.hide{
     opacity: 0;
 } */
-@keyframes spin{
-  to{
-    transform: translate(-50%,-50%) rotate(360deg);
-  }
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
+
 .weather-week {
     margin: 0 auto;
     padding: 7px 25px;
@@ -215,16 +221,14 @@
     padding: 9px 0;
 }
 
-.week-info{
+.week-info {
     width: 30%;
     flex-shrink: 0;
 }
 
-.week-icon{
+.week-icon {}
 
-}
-
-.UPDOWN{
+.UPDOWN {
     width: 30%;
 }
 
@@ -235,7 +239,7 @@
     text-align: center;
 }
 
-.text{
+.text {
     padding-right: 12px;
 }
 
@@ -258,43 +262,45 @@
 
 
 /* 주간 날씨 온도 영역 */
-.weather-weekCont .UPDOWN{
-    display:flex;
-    justify-content:flex-end;
-    align-items:center;
+.weather-weekCont .UPDOWN {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 /* 아이콘 간격 */
-.week-icon .material-symbols-outlined{
-    padding:0 13px;
+.week-icon .material-symbols-outlined {
+    padding: 0 13px;
 }
 
 /* 온도 박스 */
-.UPDOWN div{
-    display:flex;
-    justify-content:center;
+.UPDOWN div {
+    display: flex;
+    justify-content: center;
     gap: 2px;
-    width:70%;        /* 온도 영역 고정 */
-    flex-shrink:0;
-    
+    width: 70%;
+    /* 온도 영역 고정 */
+    flex-shrink: 0;
+
 }
 
 /* 온도 숫자 */
-.UPDOWN div p{
-    width:32px;        /* 숫자 폭 고정 → 세로 정렬 맞춤 */
-    font-variant-numeric:tabular-nums; /* 숫자 폭 동일 */
-    margin:0;
+.UPDOWN div p {
+    width: 32px;
+    /* 숫자 폭 고정 → 세로 정렬 맞춤 */
+    font-variant-numeric: tabular-nums;
+    /* 숫자 폭 동일 */
+    margin: 0;
 }
 
 /* 최저 기온 */
-.min{
-    color:rgb(0, 17, 255);
+.min {
+    color: rgb(0, 17, 255);
     text-align: center;
 }
 
 /* 최고 기온 */
-.max{
-    color:#ff0000;
-    text-align:center;
+.max {
+    color: #ff0000;
+    text-align: center;
 }
-
