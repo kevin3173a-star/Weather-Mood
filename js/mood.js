@@ -78,7 +78,7 @@ let dataJson = async function () {
    el_list.innerHTML = '';
    dataFilter.forEach(function (v, i) {
        el_list.innerHTML += `<li class="list swiper-slide" data-id="${v.id}"
-                               style="background: url(${v.src}) 0 0 / cover no-repeat fixed;">                        
+                               style="background: url(${v.src}) 0 0 / cover no-repeat fixed; cursor:pointer">                        
                            <img class="lp" src="./image/mood/LP_bg 1.png" alt="">
                            <p class="lp-txt">${v['lp-txt']}</p></li>`;
    });

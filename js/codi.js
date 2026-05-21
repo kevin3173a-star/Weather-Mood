@@ -53,7 +53,7 @@
           imgData[gender][tab][season].forEach(function (item) {
 
             el_Img.innerHTML += `
-              <p>
+              <p style="cursor: pointer;">
                 <img 
                   src="${item.src}"
                   data-id="${item.id}" 

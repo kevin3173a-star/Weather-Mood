@@ -31,6 +31,7 @@
     width: 174px;
     height: 228px;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .list p{
@@ -125,6 +126,7 @@ aside .title{
     width: 120px; height: 33px;
     border-radius: 20px;
     font-size: 12px;
+    cursor: pointer;
 }
 
 .modal-list{

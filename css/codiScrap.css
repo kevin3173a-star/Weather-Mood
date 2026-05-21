@@ -54,6 +54,7 @@
     width: 174px;
     height: 228px;
     object-fit: cover;
+    cursor: pointer;
     
 }
 
@@ -149,6 +150,7 @@ aside.active{
     width: 120px; height: 33px;
     border-radius: 20px;
     font-size: 12px;
+    cursor: pointer;
 }
 
 /* 오버레이 */
