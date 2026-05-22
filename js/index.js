@@ -1,26 +1,13 @@
 if(!sessionStorage.ani){
   
+  document.body.className='ani';
+
+setTimeout(()=>{
   sessionStorage.ani = 1;
+},3000);
 }
 
-// 10분 이내면 기존 날씨 api 데이터 사용
-const now = Date.now();
-const savedTime = localStorage.getItem('apiTime');
-console.clear();
 
-if(savedTime && now - savedTime < 1000 * 60 * 10){
-  console.log('기존 날씨데이터 사용중(10분마다 갱신)');
-  console.log(
-        '마지막 업데이트된 시간',
-        new Date(Number(savedTime)).toLocaleString()
-      );
-}else{
-  aa();
-  console.log(
-        '업데이트가 되었습니다',
-        new Date(now).toLocaleString()
-      );
-}
 
 async function aa(){
   try{
@@ -63,6 +50,25 @@ async function aa(){
   catch(err){
     console.log('미세먼지 api 오류', err);
   }
+}
+
+// 10분 이내면 기존 날씨 api 데이터 사용
+const now = Date.now();
+const savedTime = localStorage.getItem('apiTime');
+console.clear();
+
+if(savedTime && now - savedTime < 1000 * 60 * 10){
+  console.log('기존 날씨데이터 사용중(10분마다 갱신)');
+  console.log(
+        '마지막 업데이트된 시간',
+        new Date(Number(savedTime)).toLocaleString()
+      );
+}else{
+  aa();
+  console.log(
+        '업데이트가 되었습니다',
+        new Date(now).toLocaleString()
+      );
 }
 
 // ================맨처음 성별선택 온보딩 & 기록있으면 바로 메인===================
